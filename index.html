@@ -75,7 +75,7 @@
     <script>
       var queries = window.location.href.replace(/^.+\?/,'').split('&')
       var params = []
-      var defaulParams = {
+      var defaultParams = {
           "path": ["json/"],
           "assembly": ["output"],
           "view": ["circle"],
@@ -84,8 +84,8 @@
       queries.forEach(function(q){
         parts = q.split('=')
         if (!params[parts[0]]) params[parts[0]] = [];
-        params[parts[0]].push(parts[1])
-      })
+        params[parts[0]].push(parts[1]);
+      });
       var assemblies = params['assembly'] ? params['assembly'] : defaultParams['assembly'];
       var path = params['path'] ? params['path'] : defaultParams['path'];
       var views = params['view'] ? params['view'] : defaultParams['view'];
