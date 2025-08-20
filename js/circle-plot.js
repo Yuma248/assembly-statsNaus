@@ -247,7 +247,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   // plot BUSCO/CEGMA completeness if available
   if (this.busco) {
     var ccg = g.append('g')
-      .attr('transform', 'translate(' + (radii.percent[1] + tick * 3.5) + ',' + (-radii.percent[1] - tick * 0) + ')')
+      .attr('transform', 'translate(' + (-radii.percent[1] + tick * 3.5) + ',' + (radii.percent[1] - tick * 0) + ')')
       .attr("id", "asm-busco_completeness");
     var ccdg = ccg.append('g')
       .attr("id", "asm-busco_completeness_data");
