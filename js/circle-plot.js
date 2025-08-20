@@ -549,7 +549,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   var lscl = lg.append('g')
     .attr("id", "asm-g-scale_legend");
   var txt = lscl.append('text')
-    .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 150) + ')')
+    .attr('transform', 'translate(' + (size / 2 + 10) + ',' + (-size / 2 - 150) + ')')
     .attr('class', 'asm-bl_title');
   txt.append('tspan').text('Scale');
 
