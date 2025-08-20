@@ -531,10 +531,10 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   if (this.contigs) {
     var lctg = lg.append('g')
       .attr("id", "asm-g-contig_legend");
-    var txt = lctg.append('text')
-      .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 70) + ')')
+    //var txt = lctg.append('text')
+      //.attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 70) + ')')
       //.attr('class', 'asm-bl_title');
-    txt.append('tspan').text('Contig statistics');
+    //txt.append('tspan').text('Contig statistics');
 
     var key = lctg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 62) + ')');
     key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-contig_count asm-toggle');
@@ -549,10 +549,10 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   // add adjustable scale legend
  var lscl = lg.append('g')
    .attr("id", "asm-g-scale_legend");
- var txt = lscl.append('text')
-   .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 150) + ')')
+ //var txt = lscl.append('text')
+   //.attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 150) + ')')
    //.attr('class', 'asm-bl_title');
- txt.append('tspan').text('Scale');
+ //txt.append('tspan').text('Scale');
 
  var key = lscl.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 142) + ')');
  var circ_key = key.append('g').attr('width', '100px').attr('height', '14px').attr('transform', 'translate(0,8)').attr('id', 'asm-circ_scale_g');
