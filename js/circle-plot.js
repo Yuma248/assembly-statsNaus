@@ -455,7 +455,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     var lccg = lg.append('g')
       .attr("id", "asm-g-busco_completeness_legend");
     var txt = lccg.append('text')
-      .attr('transform', 'translate(' + (-size / 2 - 210) + ',' + (+size / 2 + 20) + ')')
+      .attr('transform', 'translate(' + (size / 2 - 210) + ',' + (size / 2 + 20) + ')')
       .attr('class', 'asm-tr_title');
     txt.append('tspan').text('BUSCO (n = ' + this.busco.n.toLocaleString() + ')');
     var key = lccg.append('g').attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 28) + ')');
