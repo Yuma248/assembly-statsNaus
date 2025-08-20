@@ -533,7 +533,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
       .attr("id", "asm-g-contig_legend");
     var txt = lctg.append('text')
       .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 70) + ')')
-      .attr('class', 'asm-bl_title');
+      //.attr('class', 'asm-bl_title');
     txt.append('tspan').text('Contig statistics');
 
     var key = lctg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 62) + ')');
@@ -551,7 +551,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
    .attr("id", "asm-g-scale_legend");
  var txt = lscl.append('text')
    .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 150) + ')')
-   .attr('class', 'asm-bl_title');
+   //.attr('class', 'asm-bl_title');
  txt.append('tspan').text('Scale');
 
  var key = lscl.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 142) + ')');
