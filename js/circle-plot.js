@@ -118,8 +118,9 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr("y", size / 2)
     .attr("text-anchor", "middle")
     .style("font-size", "18px")
-    .style("fill", "#000000")   // bright red
-    .text("YUMA");
+    .style("fill", "#000000")
+    .text("YUMA")
+    .raise();
 
   // setup radii for circular plots
   var radii = {};
@@ -169,10 +170,10 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   var g = svg.append('g')
     .attr("transform", "translate(" + size / 2 + "," + size / 2 + ")")
     .attr("id", "asm-g-plot");
-  //var txt = g.append('text')
-      //.attr('transform', 'translate(' + (-size / 2) + ',' + (size / 2) + ')')
-      //.attr('class', 'asm-br_title');
-  //txt.append('tspan').text(this.busco.assembly())
+  g.append('text')
+      .attr('transform', 'translate(' + (-size / 2) + ',' + (size / 2) + ')')
+      .attr('class', 'asm-br_title');
+      .text("YUMA");
 
 
 
