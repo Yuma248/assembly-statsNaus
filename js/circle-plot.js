@@ -172,11 +172,11 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr("id", "asm-g-plot");
   g.append('text')
     .attr('x', 0)
-    .attr('y', 0)
+    .attr('y', 300)
     .attr('text-anchor', 'middle')
     .attr('dominant-baseline', 'middle')  // vertically center
     .attr('class', 'asm-br_title')
-    .text("YUMA M");
+    .text(this.assembly.name);
 
 
 
