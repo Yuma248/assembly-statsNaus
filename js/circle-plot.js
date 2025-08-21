@@ -115,7 +115,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr('preserveAspectRatio', 'xMidYMid meet')
   svg.append("text")
     .attr("x", size / 2)
-    .attr("y", 500)
+    .attr("y", size / 2)
     .attr("text-anchor", "middle")
     .style("font-size", "18px")
     .style("fill", "#000000")   // bright red
