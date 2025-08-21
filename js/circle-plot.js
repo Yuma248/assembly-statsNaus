@@ -247,7 +247,9 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   // plot BUSCO/CEGMA completeness if available
   if (this.busco) {
     var ccg = g.append('g')
-      .attr('transform', 'translate(' + (radii.percent[1] + tick * 3.5) + ',' + (-radii.percent[1] - tick * 0) + ')')
+      //.attr('transform', 'translate(' + (radii.percent[1] + tick * 3.5) + ',' + (-radii.percent[1] - tick * 0) + ')')
+      .attr('transform', 'translate(' + (-radii.percent[1] + tick * 3.5) + ',' + (radii.percent[1] - tick * 0) + ')')
+      //.attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 70) + ')')
       .attr("id", "asm-busco_completeness");
     var ccdg = ccg.append('g')
       .attr("id", "asm-busco_completeness_data");
@@ -558,7 +560,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
 
  var key = lscl.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 142) + ')');
  var circ_key = key.append('g').attr('width', '100px').attr('height', '14px').attr('transform', 'translate(0,8)').attr('id', 'asm-circ_scale_g');
- var circ_scale_rect = circ_key.append('rect').attr('x', w + 5).attr('y', -3).attr('width', '80px').attr('height', '18px').attr('class', 'asm-scale_rect');
+ //var circ_scale_rect = circ_key.append('rect').attr('x', w + 5).attr('y', -3).attr('width', '80px').attr('height', '18px').attr('class', 'asm-scale_rect');
  //circ_key.append('circle').attr('cx', w / 2).attr('cy', w / 2).attr('r', w / 2).attr('class', 'asm-axis');
  //circ_key.append('line').attr('x1', w / 2).attr('y1', 0).attr('x2', w / 2).attr('y2', w / 2).attr('class', 'asm-axis asm-narrow');
  var readable_circle_span = getReadableSeqSizeString(circle_span, 1)
