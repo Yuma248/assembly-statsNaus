@@ -71,7 +71,8 @@ Assembly.prototype.squarePlot = function(parent_div, scale_type, max_count, max_
   this.max_span = max_span;
   this.line_data = [];
   var data = this.prepareLine()
-  this.addLine(data,this.name,this);
+  //this.addLine(data,this.name,this);
+  this.addLine(data,"YUMA",this);
   this.line_data[0].line.classed('asm-reference-line',true).transition().duration(500).style('opacity',1)
 
 
