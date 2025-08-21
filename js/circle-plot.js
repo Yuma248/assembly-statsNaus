@@ -176,7 +176,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr('text-anchor', 'middle')
     .attr('dominant-baseline', 'middle')  // vertically center
     .attr('class', 'asm-br_title')
-    .text(this.assembly.name);
+    .text("Yuma");
 
 
 
