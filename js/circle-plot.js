@@ -113,14 +113,14 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr('height', '100%')
     .attr('viewBox', '0 0 ' + size + ' ' + size)
     .attr('preserveAspectRatio', 'xMidYMid meet')
-  svg.append("text")
-    .attr("x", size / 2)
-    .attr("y", size / 2)
-    .attr("text-anchor", "middle")
-    .style("font-size", "18px")
-    .style("fill", "#000000")
-    .text("YUMA")
-    .raise();
+  //svg.append("text")
+    //.attr("x", size / 2)
+    //.attr("y", size / 2)
+    //.attr("text-anchor", "middle")
+    //.style("font-size", "18px")
+    //.style("fill", "#000000")
+    //.text("YUMA")
+    //.raise();
 
   // setup radii for circular plots
   var radii = {};
@@ -176,7 +176,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr('text-anchor', 'middle')
     .attr('dominant-baseline', 'middle')  // vertically center
     .attr('class', 'asm-br_title')
-    .text("YUMA");
+    .text("YUMA M");
 
 
 
