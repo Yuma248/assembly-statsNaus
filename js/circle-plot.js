@@ -455,11 +455,13 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     var lccg = lg.append('g')
       .attr("id", "asm-g-busco_completeness_legend");
     var txt = lccg.append('text')
-      .attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 20) + ')')
+      //.attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 20) + ')')
+      .attr('transform', 'translate(' + (-size / 2 - 10) + ',' + (size / 2 + 70) + ')')
       .attr('class', 'asm-br_title');
     //  .attr('class', 'asm-tr_title');
     txt.append('tspan').text('BUSCO (n = ' + this.busco.n.toLocaleString() + ')');
-    var key = lccg.append('g').attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 28) + ')');
+    //var key = lccg.append('g').attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 28) + ')');
+    var key = lccg.append('g').attr('transform', 'translate(' + (-size / 2 - 10) + ',' + (size / 2 + 62) + ')');
     key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-busco_C asm-toggle');
     key.append('text').attr('x', w + 3).attr('y', w - 1).text('Comp. (' + this.busco.C.toFixed(1) + '%)').attr('class', 'asm-key');
     key.append('rect').attr('y', w * 1.5).attr('height', w).attr('width', w).attr('class', 'asm-busco_D asm-toggle');
@@ -562,7 +564,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
  var readable_circle_span = getReadableSeqSizeString(circle_span, 1)
  //circ_key.append('text').attr('x', w + 8).attr('y', w - 1).text(readable_circle_span).attr('class', 'asm-key')
  var rad_key = key.append('g').attr('width', '100px').attr('height', '14px').attr('transform', 'translate(0,' + (w * 2.5) + ')').attr('id', 'asm-rad_scale_g');
- var rad_scale_rect = rad_key.append('rect').attr('x', w + 5).attr('y', -3).attr('width', '80px').attr('height', '18px').attr('class', 'asm-scale_rect');
+ //var rad_scale_rect = rad_key.append('rect').attr('x', w + 5).attr('y', -3).attr('width', '80px').attr('height', '18px').attr('class', 'asm-scale_rect');
  //rad_key.append('circle').attr('cx', w / 2).attr('cy', w / 2).attr('r', w / 2).attr('class', 'asm-axis asm-narrow');
  //rad_key.append('line').attr('x1', w / 2).attr('y1', 0).attr('x2', w / 2).attr('y2', w / 2).attr('class', 'asm-axis');
  var readable_longest = getReadableSeqSizeString(longest, 1);
