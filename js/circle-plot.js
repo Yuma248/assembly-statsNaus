@@ -461,12 +461,12 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
       .attr("id", "asm-g-busco_completeness_legend");
     var txt = lccg.append('text')
       //.attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 20) + ')')
-      .attr('transform', 'translate(' + (-size / 2 + 8) + ',' + (size / 2 - 90) + ')')
+      .attr('transform', 'translate(' + (-size / 2 + 5) + ',' + (size / 2 - 90) + ')')
       .attr('class', 'asm-br_title');
     //  .attr('class', 'asm-tr_title');
     txt.append('tspan').text('BUSCO (n = ' + this.busco.n.toLocaleString() + ')');
     //var key = lccg.append('g').attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 28) + ')');
-    var key = lccg.append('g').attr('transform', 'translate(' + (-size / 2 + 8) + ',' + (size / 2 - 82) + ')');
+    var key = lccg.append('g').attr('transform', 'translate(' + (-size / 2 + 5) + ',' + (size / 2 - 82) + ')');
     key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-busco_C asm-toggle');
     key.append('text').attr('x', w + 3).attr('y', w - 1).text('Comp. (' + this.busco.C.toFixed(1) + '%)').attr('class', 'asm-key');
     key.append('rect').attr('y', w * 1.5).attr('height', w).attr('width', w).attr('class', 'asm-busco_D asm-toggle');
@@ -512,12 +512,12 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   var lsg = lg.append('g')
     .attr("id", "asm-g-scaffold_legend");
   var txt = lsg.append('text')
-    .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (-size / 2 + 20) + ')')
+    .attr('transform', 'translate(' + (-size / 2 + 5) + ',' + (-size / 2 + 20) + ')')
     .attr('class', 'asm-tl_title');
   txt.append('tspan').text('Scaffold statistics');
   //txt.append('tspan').text('distribution').attr('x',0).attr('dy',20);
 
-  var key = lsg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (-size / 2 + 28) + ')');
+  var key = lsg.append('g').attr('transform', 'translate(' + (-size / 2 + 5) + ',' + (-size / 2 + 28) + ')');
   key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-count asm-toggle');
   var count_txt = key.append('text').attr('x', w + 3).attr('y', w - 1).attr('class', 'asm-key')
   count_txt.append('tspan').text('Log')
