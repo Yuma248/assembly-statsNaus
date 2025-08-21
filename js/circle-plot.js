@@ -171,9 +171,12 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr("transform", "translate(" + size / 2 + "," + size / 2 + ")")
     .attr("id", "asm-g-plot");
   g.append('text')
-      .attr('transform', 'translate(' + (-size / 2) + ',' + (size / 2) + ')')
-      .attr('class', 'asm-br_title');
-      .text("YUMA");
+    .attr('x', 0)
+    .attr('y', 0)
+    .attr('text-anchor', 'middle')
+    .attr('dominant-baseline', 'middle')  // vertically center
+    .attr('class', 'asm-br_title')
+    .text("YUMA");
 
 
 
