@@ -248,7 +248,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   if (this.busco) {
     var ccg = g.append('g')
       //.attr('transform', 'translate(' + (radii.percent[1] + tick * 3.5) + ',' + (-radii.percent[1] - tick * 0) + ')')
-      .attr('transform', 'translate(' + (-radii.percent[1] + tick * 4) + ',' + (radii.percent[1] - tick * 1) + ')')
+      .attr('transform', 'translate(' + (-radii.percent[1] + tick * 2.5) + ',' + (radii.percent[1] - tick * 1) + ')')
       //.attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 70) + ')')
       .attr("id", "asm-busco_completeness");
     var ccdg = ccg.append('g')
@@ -458,12 +458,12 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
       .attr("id", "asm-g-busco_completeness_legend");
     var txt = lccg.append('text')
       //.attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 20) + ')')
-      .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 110) + ')')
+      .attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 90) + ')')
       .attr('class', 'asm-br_title');
     //  .attr('class', 'asm-tr_title');
     txt.append('tspan').text('BUSCO (n = ' + this.busco.n.toLocaleString() + ')');
     //var key = lccg.append('g').attr('transform', 'translate(' + (size / 2 - 210) + ',' + (-size / 2 + 28) + ')');
-    var key = lccg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 102) + ')');
+    var key = lccg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 82) + ')');
     key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-busco_C asm-toggle');
     key.append('text').attr('x', w + 3).attr('y', w - 1).text('Comp. (' + this.busco.C.toFixed(1) + '%)').attr('class', 'asm-key');
     key.append('rect').attr('y', w * 1.5).attr('height', w).attr('width', w).attr('class', 'asm-busco_D asm-toggle');
