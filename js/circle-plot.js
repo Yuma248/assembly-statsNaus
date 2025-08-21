@@ -539,8 +539,8 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     var key = lctg.append('g').attr('transform', 'translate(' + (-size / 2 + 10) + ',' + (size / 2 - 62) + ')');
     //key.append('rect').attr('height', w).attr('width', w).attr('class', 'asm-contig_count asm-toggle');
     var count_txt = key.append('text').attr('x', w + 2).attr('y', w - 1).attr('class', 'asm-key')
-    count_txt.append('tspan').text('Log')
-    count_txt.append('tspan').attr('baseline-shift', 'sub').attr('font-size', '75%').text(10)
+    //count_txt.append('tspan').text('Log')
+    //count_txt.append('tspan').attr('baseline-shift', 'sub').attr('font-size', '75%').text(10)
     //count_txt.append('tspan').text(' contig count (total ' + this.contig_count.toLocaleString() + ')');
     //key.append('rect').attr('y', w * 1.5).attr('height', w).attr('width', w).attr('class', 'asm-contig asm-toggle');
     //key.append('text').attr('x', w + 3).attr('y', w * 2.5 - 1).text('Contig length (total ' + getReadableSeqSizeString(this.contig_sum, 0) + ')').attr('class', 'asm-key');
@@ -566,7 +566,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
  rad_key.append('circle').attr('cx', w / 2).attr('cy', w / 2).attr('r', w / 2).attr('class', 'asm-axis asm-narrow');
  rad_key.append('line').attr('x1', w / 2).attr('y1', 0).attr('x2', w / 2).attr('y2', w / 2).attr('class', 'asm-axis');
  var readable_longest = getReadableSeqSizeString(longest, 1);
- rad_key.append('text').attr('x', w + 8).attr('y', w - 1).text(readable_longest).attr('class', 'asm-key');
+ //rad_key.append('text').attr('x', w + 8).attr('y', w - 1).text(readable_longest).attr('class', 'asm-key');
 
   // setup form
   var form_div_wrapper = parent.append('div').attr('id', 'asm-scale_form_wrapper').attr('class', 'hidden');
