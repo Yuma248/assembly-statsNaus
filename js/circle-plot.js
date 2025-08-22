@@ -840,7 +840,7 @@ document.addEventListener("DOMContentLoaded", function() {
             canvas.height = svg.clientHeight;
             const context = canvas.getContext("2d");
             context.drawImage(img, 0, 0);
-            console.log(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
+            console.log('svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height}');
             alert(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
             const pdf = new window.jspdf.jsPDF({
                 orientation: canvas.width > canvas.height ? "landscape" : "portrait",
