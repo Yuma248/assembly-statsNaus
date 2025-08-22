@@ -8,9 +8,9 @@
     visibility: hidden;
   }
   .asm-ns {
-    stroke: #dddddd;
+    stroke: #b3b3b3;
     stroke-width: 0px;
-    fill: #dddddd;
+    fill: #b3b3b3;
   }
   .asm-genome {
     stroke: rgb(177, 89, 40);
