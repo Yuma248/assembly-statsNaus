@@ -107,8 +107,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
   this.parent_div = parent_div;
   var parent = d3.select('#' + parent_div);
   var svg = parent.append('svg');
-  var assemblyName = parent.attr('data-assembly-name');
-
+  
   svg.attr('width', '100%')
     .attr('height', '100%')
     .attr('viewBox', '0 0 ' + size + ' ' + size)
