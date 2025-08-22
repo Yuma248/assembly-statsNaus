@@ -843,9 +843,9 @@ document.addEventListener("DOMContentLoaded", function() {
             context.drawImage(img, 0, 0);
 
             const pdf = new window.jspdf.jsPDF({
-                orientation: "landscape",
+                orientation: canvas.width > canvas.height ? "landscape" : "portrait",
                 unit: "px",
-                format: [canvas.width, canvas.height]
+                format: [canvas.width * 1.02, canvas.height * 1.02]
             });
 
             const imgData = canvas.toDataURL("image/png");
