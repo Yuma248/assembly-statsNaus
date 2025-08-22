@@ -847,7 +847,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 format: [canvas.width * 1.02, canvas.height * 1.02]
             });
             const pageWidth = pdf.internal.pageSize.getWidth();
-            const pageHwight = pdf.internal.pageSize.getHeight();
+            const pageHeight = pdf.internal.pageSize.getHeight();
             alert(`svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
             const imgData = canvas.toDataURL("image/png");
             pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
