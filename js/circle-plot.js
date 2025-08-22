@@ -825,7 +825,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("save-pdf");
     btn.addEventListener("click", function() {
         alert("Button clicked!");
-        const svg = document.querySelector("#asm-g-plot");
+        const svg = document.querySelector("#svg");
         console.log(svg);
         console.log(svg.clientWidth, svg.clientHeight);
         const serializer = new XMLSerializer();
