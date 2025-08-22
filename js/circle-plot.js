@@ -834,11 +834,13 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
 
         img.onload = function() {
+            const scaleFactor = 5;
             alert("Image loaded!");
             const canvas = document.createElement("canvas");
-            canvas.width = svg.clientWidth;
-            canvas.height = svg.clientHeight;
+            canvas.width = svg.clientWidth * scaleFactor;
+            canvas.height = svg.clientHeight * scaleFactor;
             const context = canvas.getContext("2d");
+            context.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
             context.drawImage(img, 0, 0);
             
             const pdf = new window.jspdf.jsPDF({
@@ -848,7 +850,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             const pageWidth = pdf.internal.pageSize.getWidth();
             const pageHeight = pdf.internal.pageSize.getHeight();
-            alert(`svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
+            //alert(`svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
             const imgData = canvas.toDataURL("image/png", 1.0);
             pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
 
