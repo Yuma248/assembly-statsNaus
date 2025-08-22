@@ -830,7 +830,6 @@ document.addEventListener("DOMContentLoaded", function() {
         inlineStyles(svg);
         const serializer = new XMLSerializer();
         const svgString = serializer.serializeToString(svg);
-        console.log(svgString.slice(0,100));
         const img = new Image();
         img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
 
@@ -841,7 +840,8 @@ document.addEventListener("DOMContentLoaded", function() {
             canvas.height = svg.clientHeight;
             const context = canvas.getContext("2d");
             context.drawImage(img, 0, 0);
-
+            console.log(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
+            alert(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
             const pdf = new window.jspdf.jsPDF({
                 orientation: canvas.width > canvas.height ? "landscape" : "portrait",
                 unit: "px",
