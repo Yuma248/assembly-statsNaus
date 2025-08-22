@@ -825,7 +825,7 @@ Assembly.prototype.reDrawPlot = function(parent, longest, circle_span) {
 document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("save-pdf");
     btn.addEventListener("click", function() {
-        alert("Button clicked Yuma!");
+        alert("Button clicked!");
         const svg = document.querySelector("#svg");
         inlineStyles(svg);
         const serializer = new XMLSerializer();
@@ -834,14 +834,14 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
 
         img.onload = function() {
-            alert("Yuma Image loaded!");
+            alert("Image loaded!");
             const canvas = document.createElement("canvas");
             canvas.width = svg.clientWidth;
             canvas.height = svg.clientHeight;
             const context = canvas.getContext("2d");
             context.drawImage(img, 0, 0);
-            console.log('svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height}');
-            alert(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
+            alert('svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height}');
+            console.log(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
             const pdf = new window.jspdf.jsPDF({
                 orientation: canvas.width > canvas.height ? "landscape" : "portrait",
                 unit: "px",
