@@ -834,20 +834,21 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
 
         img.onload = function() {
-            alert("Image loaded Yuma!");
+            alert("Image loaded!");
             const canvas = document.createElement("canvas");
             canvas.width = svg.clientWidth;
             canvas.height = svg.clientHeight;
             const context = canvas.getContext("2d");
             context.drawImage(img, 0, 0);
-            alert(`svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height}`);
-            console.log(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
+            
             const pdf = new window.jspdf.jsPDF({
                 orientation: canvas.width > canvas.height ? "landscape" : "portrait",
                 unit: "px",
                 format: [canvas.width * 1.02, canvas.height * 1.02]
             });
-
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHwight = pdf.internal.pageSize.getHeight();
+            alert(`svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
             const imgData = canvas.toDataURL("image/png");
             pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
 
