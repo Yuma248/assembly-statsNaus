@@ -820,6 +820,35 @@ Assembly.prototype.reDrawPlot = function(parent, longest, circle_span) {
   this.drawPlot(parent.attr('id'), longest, circle_span);
 }
 
+document.getElementById("save-pdf").addEventListener("click", function() {
+    const svg = document.querySelector("#asm-plot-container svg");
+    const serializer = new XMLSerializer();
+    const svgString = serializer.serializeToString(svg);
+
+    const img = new Image();
+    img.src = 'data:image/svg+xml;base64,' + btoa(svgString);
+
+    img.onload = function() {
+        const canvas = document.createElement("canvas");
+        canvas.width = svg.clientWidth;
+        canvas.height = svg.clientHeight;
+        const context = canvas.getContext("2d");
+        context.drawImage(img, 0, 0);
+
+        const pdf = new window.jspdf.jsPDF({
+            orientation: "landscape",
+            unit: "px",
+            format: [canvas.width, canvas.height]
+        });
+
+        const imgData = canvas.toDataURL("image/png");
+        pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+
+        // Use assemblyName as the file name
+        pdf.save(`${assemblyName}.pdf`);
+    };
+});
+
 function circumference_axis(parent, radii, scale) {
   var g = parent.append('g');
   var axis = d3.svg.arc()
