@@ -821,7 +821,7 @@ Assembly.prototype.reDrawPlot = function(parent, longest, circle_span) {
 }
 
 document.getElementById("save-pdf").addEventListener("click", function() {
-    const svg = document.querySelector("#assembly_stats svg");
+    const svg = document.querySelector("#asm-g-plot");
     const serializer = new XMLSerializer();
     const svgString = serializer.serializeToString(svg);
 
