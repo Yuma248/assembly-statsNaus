@@ -112,6 +112,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr('height', '100%')
     .attr('viewBox', '0 0 ' + size + ' ' + size)
     .attr('preserveAspectRatio', 'xMidYMid meet')
+    .attr('id', 'svg')
   
   // setup radii for circular plots
   var radii = {};
