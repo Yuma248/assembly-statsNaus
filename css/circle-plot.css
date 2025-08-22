@@ -150,11 +150,11 @@
   }
   #asm-g-contig_length_data {}
   .asm-pie {
-    stroke: #bbbbbb;
-    /*stroke: #693b8a;*/
+    /*stroke: #bbbbbb;*/
+    stroke: #693b8a;
     stroke-width: 2px;
-    fill: #bbbbbb;
-    /*fill: #693b8a;*/
+    /*fill: #bbbbbb;*/
+    fill: #693b8a;
   }
   .asm-majorTick {
     stroke: #555555;
