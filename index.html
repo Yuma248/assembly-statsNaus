@@ -143,7 +143,8 @@
 
         }
       }
-      var plot_container = div.append('div').attr('class','asm-plot-container').attr('id','asm-plot-container').append('p').text(assemblies[0]);
+      //var plot_container = div.append('div').attr('class','asm-plot-container').attr('id','asm-plot-container').append('p').text(assemblies[0]);
+      var plot_container = div.append('div').attr('class','asm-plot-container').attr('id','asm-plot-container');
       document.title = assemblies[0] + " assembly stats"
       var arr = [];
       assemblies.forEach(function(assembly,index){
