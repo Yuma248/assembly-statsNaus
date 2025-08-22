@@ -825,7 +825,7 @@ Assembly.prototype.reDrawPlot = function(parent, longest, circle_span) {
 document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("save-pdf");
     btn.addEventListener("click", function() {
-        alert("Button clicked!");
+        alert("Button clicked Yuma!");
         const svg = document.querySelector("#svg");
         inlineStyles(svg);
         const serializer = new XMLSerializer();
