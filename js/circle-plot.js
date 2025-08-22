@@ -162,9 +162,9 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr("transform", "translate(" + size / 2 + "," + size / 2 + ")")
     .attr("id", "asm-g-plot");
   g.append('text')
-    .attr('y', 200)
+    .attr('y', 275)
     .attr('text-anchor', 'middle')
-    .style('font-size', '40px', 'bold')
+    .style('font-size', '40px')
     .style('font-weight', 'bold')
     .text(assemblyName);
 
