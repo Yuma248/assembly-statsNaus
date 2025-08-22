@@ -109,7 +109,6 @@
             var view = d3.select(this).text();
             if (view == 'circle'){
               plot_container.html('')
-              plot_container.append('p').style('font-size','40px').text(assemblies[0]);
               arr[0].drawPlot('asm-plot-container');
             }
             else if (view == 'compare') {
@@ -145,7 +144,6 @@
         }
       }
       var plot_container = div.append('div').attr('class','asm-plot-container').attr('id','asm-plot-container');
-      plot_container.append('p').style('font-size','40px').text(assemblies[0]);
       document.title = assemblies[0] + " assembly stats"
       var arr = [];
       assemblies.forEach(function(assembly,index){
@@ -180,7 +178,6 @@
           }
           else {
             arr[0].drawPlot('asm-plot-container');
-            plot_container.append('p').style('font-size','40px').text(assemblies[0]);
           }
         });
       })
