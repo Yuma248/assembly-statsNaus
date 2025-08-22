@@ -819,8 +819,12 @@ Assembly.prototype.reDrawPlot = function(parent, longest, circle_span) {
   parent.html('');
   this.drawPlot(parent.attr('id'), longest, circle_span);
 }
-window.onload = function() {
-    document.getElementById("save-pdf").addEventListener("click", function() {
+
+//document.getElementById("save-pdf").addEventListener("click", function() {
+document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.getElementById("save-pdf");
+    btn.addEventListener("click", function() {
+        alert("Button clicked!");
         const svg = document.querySelector("#asm-g-plot");
         console.log(svg);
         if (!svg) {
@@ -852,7 +856,7 @@ window.onload = function() {
             pdf.save(`${assemblyName}.pdf`);
         };
     });
-};
+});
 
 function circumference_axis(parent, radii, scale) {
   var g = parent.append('g');
