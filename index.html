@@ -91,7 +91,7 @@
       var views = params['view'] ? params['view'] : defaultParams['view'];
       if (params['altAssembly']) assemblies = assemblies.concat(params['altAssembly'])
       var div = d3.select('div#assembly_stats')
-      var assemblyName = "{{ assemblies[0] }}";
+      var assemblyName = assemblies[0];
       if (params['altView']){
         views = views.concat(params['altView'])
         // generate tabs
