@@ -827,8 +827,7 @@ document.addEventListener("DOMContentLoaded", function() {
     btn.addEventListener("click", function() {
         alert("Button clicked!");
         const svg = document.querySelector("#svg");
-        console.log(svg);
-        console.log(svg.clientWidth, svg.clientHeight);
+        inlineStyles(svg);
         const serializer = new XMLSerializer();
         const svgString = serializer.serializeToString(svg);
         console.log(svgString.slice(0,100));
@@ -856,6 +855,17 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     });
 });
+
+function inlineStyles(svg) {
+    const allElements = svg.querySelectorAll("*");
+    allElements.forEach(el => {
+        const computedStyle = getComputedStyle(el);
+        for (let i = 0; i < computedStyle.length; i++) {
+            const key = computedStyle[i];
+            el.style[key] = computedStyle.getPropertyValue(key);
+        }
+    });
+}
 
 function circumference_axis(parent, radii, scale) {
   var g = parent.append('g');
