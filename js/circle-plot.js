@@ -834,13 +834,13 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
 
         img.onload = function() {
-            alert("Image loaded!");
+            alert("Image loaded Yuma!");
             const canvas = document.createElement("canvas");
             canvas.width = svg.clientWidth;
             canvas.height = svg.clientHeight;
             const context = canvas.getContext("2d");
             context.drawImage(img, 0, 0);
-            alert('svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height}');
+            alert(`svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height}`);
             console.log(svg.clientWidth, svg.clientHeight,canvas.width, canvas.height);
             const pdf = new window.jspdf.jsPDF({
                 orientation: canvas.width > canvas.height ? "landscape" : "portrait",
