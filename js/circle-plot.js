@@ -165,7 +165,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
     .attr('y', 275)
     .attr('text-anchor', 'middle')
     .style('font-size', '40px')
-    .style('font-weight', 'bold')
+    //.style('font-weight', 'bold')
     .text(assemblyName);
 
 
