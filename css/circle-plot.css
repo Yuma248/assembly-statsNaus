@@ -289,3 +289,8 @@
   .asm-form_element {
     margin-bottom: 1em;
   }
+  #save-pdf {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
