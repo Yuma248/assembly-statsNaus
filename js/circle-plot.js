@@ -835,7 +835,7 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
 
         img.onload = function() {
-            alert("Image loaded!");
+            alert("Yuma Image loaded!");
             const canvas = document.createElement("canvas");
             canvas.width = svg.clientWidth;
             canvas.height = svg.clientHeight;
