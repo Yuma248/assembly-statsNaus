@@ -827,17 +827,15 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Button clicked!");
         const svg = document.querySelector("#asm-g-plot");
         console.log(svg);
-        if (!svg) {
-            alert("SVG not found!");
-            return;
-        }
+        console.log(svg.clientWidth, svg.clientHeight);
         const serializer = new XMLSerializer();
         const svgString = serializer.serializeToString(svg);
-
+        console.log(svgString.slice(0,100));
         const img = new Image();
-        img.src = 'data:image/svg+xml;base64,' + btoa(svgString);
+        img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString)));
 
         img.onload = function() {
+            alert("Image loaded!");
             const canvas = document.createElement("canvas");
             canvas.width = svg.clientWidth;
             canvas.height = svg.clientHeight;
