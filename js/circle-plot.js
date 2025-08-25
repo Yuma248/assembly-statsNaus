@@ -852,7 +852,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             const pageWidth = pdf.internal.pageSize.getWidth();
             const pageHeight = pdf.internal.pageSize.getHeight();
-            alert(`Yuma: svg: ${svg.clientWidth}, ${svg.clientHeight} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
+            alert(`svg: ${svg.viewBox.baseVal.width}, ${svg.viewBox.baseVal.height} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
             const imgData = canvas.toDataURL("image/png", 1.0);
             pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
 
