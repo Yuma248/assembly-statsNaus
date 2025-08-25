@@ -848,7 +848,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const pdf = new window.jspdf.jsPDF({
                 orientation: canvas.width > canvas.height ? "landscape" : "portrait",
                 unit: "pt",
-                format: [canvas.width * 1.02, canvas.height * 1.02]
+                format: [canvas.width * 5.0, canvas.height * 5.0]
             });
             const pageWidth = pdf.internal.pageSize.getWidth();
             const pageHeight = pdf.internal.pageSize.getHeight();
