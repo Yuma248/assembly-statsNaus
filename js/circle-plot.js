@@ -838,7 +838,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         img.onload = function() {
             const scaleFactor = 5;
-            alert("Image loaded YUMA!");
+            alert("Image loaded!");
             const canvas = document.createElement("canvas");
             //canvas.width = svg.clientWidth * scaleFactor;
             //canvas.height = svg.clientHeight * scaleFactor;
@@ -865,11 +865,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function copyStyles(orig, copy) {
-    const origStyles = window.getComputedStyle(orig);
-    copy.style.cssText = origStyles.cssText;
-    for (let i = 0; i < orig.children.length; i++) {
-        copyStyles(orig.children[i], copy.children[i]);
-    }
+    const allElements = copy.querySelectorAll("*");
+    const origElements = orig.querySelectorAll("*");
+
+    allElements.forEach((el, i) => {
+        const computedStyle = window.getComputedStyle(origElements[i]);
+        for (let j = 0; j < computedStyle.length; j++) {
+            const key = computedStyle[j];
+            el.style[key] = computedStyle.getPropertyValue(key);
+        }
+    });
 }
 
 function inlineStyles(svg) {
