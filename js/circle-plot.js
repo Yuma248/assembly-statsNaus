@@ -826,7 +826,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("save-pdf");
     btn.addEventListener("click", function() {
         alert("Button clicked!");
-        const svg = document.querySelector("#svg");
+        const originalSvg = document.querySelector("#svg");
+        const svg = originalSvg.cloneNode(true);
+        //const svg = document.querySelector("#svg");
         inlineStyles(svg);
         const serializer = new XMLSerializer();
         const svgString = serializer.serializeToString(svg);
@@ -852,9 +854,9 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             const pageWidth = pdf.internal.pageSize.getWidth();
             const pageHeight = pdf.internal.pageSize.getHeight();
-            alert(`svg: ${svg.viewBox.baseVal.width}, ${svg.viewBox.baseVal.height} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
+            alert(`Yuma: svg: ${svg.viewBox.baseVal.width}, ${svg.viewBox.baseVal.height} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
             const imgData = canvas.toDataURL("image/png", 1.0);
-            pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+            pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight);
 
             pdf.save(`${assemblyName}.pdf`);
         };
