@@ -829,7 +829,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const parent = originalSvg.parentNode;
         const svg = originalSvg.cloneNode(true);
         //const svg = document.querySelector("#svg");
-        inlineStyles(originlaSvg);
+        //inlineStyles(svg);
+        copyStyles(originalSvg, svg);
         const serializer = new XMLSerializer();
         const svgString = serializer.serializeToString(svg);
         const img = new Image();
@@ -862,6 +863,14 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     });
 });
+
+function copyStyles(orig, copy) {
+    const origStyles = window.getComputedStyle(orig);
+    copy.style.cssText = origStyles.cssText;
+    for (let i = 0; i < orig.children.length; i++) {
+        copyStyles(orig.children[i], copy.children[i]);
+    }
+}
 
 function inlineStyles(svg) {
     const allElements = svg.querySelectorAll("*");
