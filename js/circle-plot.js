@@ -709,7 +709,7 @@ Assembly.prototype.drawPlot = function(parent_div, longest, circle_span) {
         .attr('class', 'asm-live_title');
       txt.append('tspan').text('N' + angle);
       output_text.append('text').attr('y', 18).text(npct_count[(angle * 10)-1].toLocaleString() + ' scaffolds').attr('class', 'asm-key');
-      output_text.append('text').attr('x', 120).attr('y', w * 1.2 + 18).text('>= ' + getReadableSeqSizeString(npct_length[(angle * 10)-1])).attr('class', 'asm-key asm-right');
+      //output_text.append('text').attr('x', 120).attr('y', w * 1.2 + 18).text('>= ' + getReadableSeqSizeString(npct_length[(angle * 10)-1])).attr('class', 'asm-key asm-right');
       if (nctg_length) {
         output_text.append('text').attr('y', w * 3 + 18).text(nctg_count[(angle * 10)-1].toLocaleString() + ' contigs').attr('class', 'asm-key');
         output_text.append('text').attr('x', 120).attr('y', w * 4.2 + 18).text('>= ' + getReadableSeqSizeString(nctg_length[(angle * 10)-1])).attr('class', 'asm-key asm-right');
@@ -840,12 +840,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const scaleFactor = 5;
             alert("Image loaded!");
             const canvas = document.createElement("canvas");
-            //canvas.width = svg.clientWidth * scaleFactor;
-            //canvas.height = svg.clientHeight * scaleFactor;
             canvas.width = svg.viewBox.baseVal.width * scaleFactor;
             canvas.height = svg.viewBox.baseVal.height * scaleFactor;
             const context = canvas.getContext("2d");
-            //context.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
             context.drawImage(img, 0, 0, canvas.width, canvas.height);
             
             const pdf = new window.jspdf.jsPDF({
