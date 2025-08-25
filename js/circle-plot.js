@@ -825,11 +825,11 @@ Assembly.prototype.reDrawPlot = function(parent, longest, circle_span) {
 document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("save-pdf");
     btn.addEventListener("click", function() {
-        alert("Button clicked!");
         const originalSvg = document.querySelector("#svg");
+        const parent = originalSvg.parentNode;
         const svg = originalSvg.cloneNode(true);
         //const svg = document.querySelector("#svg");
-        inlineStyles(svg);
+        inlineStyles(originlaSvg);
         const serializer = new XMLSerializer();
         const svgString = serializer.serializeToString(svg);
         const img = new Image();
