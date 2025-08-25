@@ -838,7 +838,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         img.onload = function() {
             const scaleFactor = 5;
-            alert("Image loaded!");
+            alert("Image loaded YUMA!");
             const canvas = document.createElement("canvas");
             //canvas.width = svg.clientWidth * scaleFactor;
             //canvas.height = svg.clientHeight * scaleFactor;
