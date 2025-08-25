@@ -845,8 +845,8 @@ document.addEventListener("DOMContentLoaded", function() {
             canvas.width = svg.viewBox.baseVal.width * scaleFactor;
             canvas.height = svg.viewBox.baseVal.height * scaleFactor;
             const context = canvas.getContext("2d");
-            context.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
-            context.drawImage(img, 0, 0, svg.viewBox.baseVal.width, svg.viewBox.baseVal.height, 0, 0, canvas.width, canvas.height);
+            //context.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
             
             const pdf = new window.jspdf.jsPDF({
                 orientation: canvas.width > canvas.height ? "landscape" : "portrait",
@@ -855,7 +855,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             const pageWidth = pdf.internal.pageSize.getWidth();
             const pageHeight = pdf.internal.pageSize.getHeight();
-            alert(`YUMA YUMA svg: ${svg.viewBox.baseVal.width}, ${svg.viewBox.baseVal.height} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
+            alert(`svg: ${svg.viewBox.baseVal.width}, ${svg.viewBox.baseVal.height} canvas:${canvas.width}, ${canvas.height} page: ${pageWidth}, ${pageHeight}`);
             const imgData = canvas.toDataURL("image/png", 1.0);
             pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight);
 
