@@ -837,8 +837,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const scaleFactor = 5;
             alert("Image loaded!");
             const canvas = document.createElement("canvas");
-            canvas.width = svg.clientWidth * scaleFactor;
-            canvas.height = svg.clientHeight * scaleFactor;
+            //canvas.width = svg.clientWidth * scaleFactor;
+            //canvas.height = svg.clientHeight * scaleFactor;
+            canvas.width = svg.viewBox.baseVal.width * scaleFactor;
+            canvas.height = svg.viewBox.baseVal.height * scaleFactor;
             const context = canvas.getContext("2d");
             context.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
             context.drawImage(img, 0, 0);
